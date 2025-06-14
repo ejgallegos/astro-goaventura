@@ -1,3 +1,14 @@
+---
+title: "About Us"
+date: 2023-10-27  # or a date object if your schema expects it: 2023-10-27T00:00:00.000Z
+description: "This is a description of our company."
+image: "/images/about-us.jpg" # Replace with the actual path
+tags: ["company", "about", "team"]
+---
+
+## Our Story
+
+... your content here ...
 Nosotros
 ========
 
