@@ -1,0 +1,115 @@
+---
+// import Swiper styles
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import "swiper/css/bundle";
+---
+
+<div
+	class="w-ful h-96 lg:h-[500px] sm:h-[400px] md:h-[450px] lg:rounded-lg overflow-hidden relative"
+>
+	<!-- Slider main container -->
+	<div class="swiper">
+		<!-- Additional required wrapper -->
+		<div class="swiper-wrapper">
+			<!-- Slides -->
+			<div class="swiper-slide relative">
+				<img src="../../public/images/slider/slider-tribuviajera.png" />
+			</div>
+			<div class="swiper-slide relative">
+				<img src="../../public/images/slider/slider-0.jpg" />
+				<div
+					class="absolute inset-0 flex flex-col items-center justify-center text-center text-white"
+				>
+					<h2 class="text-2xl lg:text-4xl font-bold uppercase">
+						RESERVA PROVINCIAL LAGUNA BRAVA
+					</h2>
+					<p class="text-sm lg:text-lg">
+						Este es el texto descriptivo del slider 2
+					</p>
+				</div>
+			</div>
+			<div class="swiper-slide relative">
+				<img src="../../public/images/slider/ty-slider.jpg" />
+				<div
+					class="absolute inset-0 flex flex-col items-center justify-center text-center text-white"
+				>
+					<h2 class="text-2xl lg:text-4xl font-bold uppercase">
+						PARQUE NACIONAL TALAMPAYA
+					</h2>
+					<p class="text-sm lg:text-lg">
+						Este es el texto descriptivo del slider 3
+					</p>
+				</div>
+			</div>
+		</div>
+		<!-- If we need pagination -->
+		<div class="swiper-pagination"></div>
+
+		<!-- If we need navigation buttons 
+		<div class="swiper-button-prev"></div>
+		<div class="swiper-button-next"></div>-->
+	</div>
+</div>
+
+<script>
+	import Swiper from "swiper/bundle";
+	import { Navigation, Pagination } from "swiper/modules";
+
+	const swiper = new Swiper(".swiper", {
+		modules: [Navigation, Pagination],
+		// Optional parameters
+		direction: "horizontal",
+		spaceBetween: 0,
+		centeredSlides: true,
+		autoplay: {
+			delay: 2500,
+			disableOnInteraction: false,
+		},
+
+		// If we need pagination
+		pagination: {
+			el: ".swiper-pagination",
+		},
+
+		// Navigation arrows
+		navigation: {
+			nextEl: ".swiper-button-next",
+			prevEl: ".swiper-button-prev",
+		},
+
+		// And if we need scrollbar
+		scrollbar: {
+			el: ".swiper-scrollbar",
+		},
+	});
+</script>
+
+<style>
+	.swiper {
+		width: 100%;
+		height: 100%;
+	}
+
+	.swiper-slide {
+		text-align: center;
+		font-size: 18px;
+		background: #fff;
+
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		position: relative;
+	}
+
+	.swiper-slide img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+
+	.swiper-slide .absolute {
+		background: rgba(0, 0, 0, 0.2); /* Fondo semitransparente */
+		padding: 1rem;
+	}
+</style>
